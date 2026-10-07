@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Identities of Fibonacci Numbers</title>
+    </head>
+    <body>
+        <h1>Identities of Fibonacci Numbers</h1>
+        <a href="index.html">Go Back</a>
+        <p>Watch what happens when we take the determinant of the Fibonacci-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> matrix.</p>
+
+        <div id="cassini-identity" class="math-expr">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+            <mo>det</mo>
+            <mo>(</mo>
+            <msup>
+
+                <mrow>
+                <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+
+                </mtable>
+                <mo>]</mo>
+                </mrow>
+
+                <mi>n</mi>
+
+                </msup>
+
+            <mo>)</mo>
+
+                <mo>=</mo>
+
+                <msup><mrow><mo>(</mo><mo>&#x2212;</mo><mn>1</mn><mo>)</mo></mrow><mi>n</mi></msup>
+
+                <mo>=</mo>
+
+                <mo>det</mo>
+                <mo>(</mo>
+                <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mrow><msub>
+
+                            <mi>F</mi>
+            
+                            <mrow> <!-- Subscript (n-1) -->
+                                <mi>n</mi>
+                                <mo>+</mo>
+                                <mn>1</mn>
+                            </mrow>
+
+                            </msub></mrow></mtd>
+                        <mtd><mrow><msub>
+
+                            <mi>F</mi>
+            
+                            <mrow> <!-- Subscript (n-1) -->
+                                <mi>n</mi>
+
+                            </mrow>
+
+                            </msub></mrow></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mrow><msub>
+
+                            <mi>F</mi>
+            
+                            <mrow> <!-- Subscript (n-1) -->
+                                <mi>n</mi>
+
+                            </mrow>
+
+                            </msub></mrow></mtd>
+                        <mtd><mrow><msub>
+                            <mi>F</mi>
+                            <mrow>
+                                <mi>n</mi>
+                                <mo>&#x2212;</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            </msub></mrow></mtd>
+                    </mtr>
+
+                </mtable>
+                <mo>]</mo>
+                <mo>)</mo>
+                
+                <mo>=</mo>
+
+                            <msub>
+                            <mi>F</mi>
+            
+                            <mrow> <!-- Subscript (n-1) -->
+                                <mi>n</mi>
+                                <mo>+</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            </msub>
+
+                            <msub>
+                            <mi>F</mi>
+                            <mrow>
+                                <mi>n</mi>
+                                <mo>&#x2212;</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            </msub>
+
+                        <mo>&#x2212;</mo>
+
+                        <msubsup><mi>F</mi><mi>n</mi><mn>2</mn></msubsup>
+        </math>
+        </div>
+
+        <p>This identity is known as Cassini's identity. A lot of other identities can be easily derived using matrices. For a challenge, try to derive a new identity from this:</p>
+
+        <div id="duplication-formula" class="math-expr">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+            <msup><mi>Q</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup>
+            <mo>=</mo>
+            <msup><mi>Q</mi><mi>n</mi></msup>
+            <msup><mi>Q</mi><mi>n</mi></msup>
+
+        </math>
+        </div>
+
+        <p>For more about Fibonacci numbers, check out the <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">Wikipedia</a> page.</p>
+    </body>
+</html>

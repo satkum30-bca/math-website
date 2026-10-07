@@ -1,2 +1,1 @@
-# about-me
-A website about myself.
+A website about the Fibonacci Sequence, including matrix form, Binet's formula, and identities.

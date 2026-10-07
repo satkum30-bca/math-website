@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Binet's Formula</title>
+    </head>
+    <body>
+        <h1>Identities of Fibonacci Numbers</h1>
+        <a href="index.html">Go Back</a>
+
+    <p>How do we go about finding a general formula for the Fibonacci Sequence? We have the Fibonacci-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> matrix, 
+    and we know that exponentiating it yields Fibonacci Numbers. If we can find a general formula for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>Q</mi><mi>n</mi></msub></math>, we then have a general formula for the Fibonacci Numbers.</p>
+        
+    <p>Obviously, linear algebra gives us the tools to do this through diagonalization. We obtain the two eigenvalues of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> are:</p>
+
+    <div id="phi-and-psi" class="math-expr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        
+        <mi>&phi;</mi>
+        <mo>=</mo>
+        <mfrac>
+        <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <msqrt><mn>5</mn></msqrt>
+        </mrow>
+        <mn>2</mn>
+        </mfrac><mi>,</mi>
+        <mi>&psi;</mi>
+        <mo>=</mo>
+        <mfrac>
+        <mrow>
+            <mn>1</mn>
+            <mo>&#x2212;</mo>
+            <msqrt><mn>5</mn></msqrt>
+        </mrow>
+        <mn>2</mn>
+        </mfrac>
+    </math>
+    </div>
+
+    <p>We then get:</p>
+
+    <div id="diagonalization" class="math-expr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+        <mi>Q</mi>
+        <mo>=</mo>
+
+        <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mi>&phi;</mi></mtd>
+                        <mtd><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+        <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mi>&phi;</mi></mtd>
+                        <mtd><mi>0</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+        <mfrac><mn>1</mn><msqrt><mn>5</mn></msqrt></mfrac>
+
+         <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mo>&#x2212;</mo><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mo>&#x2212;</mo><mn>1</mn></mtd>
+                        <mtd><mi>&phi;</mi></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+    </math>
+    </div>
+
+    <p>Then:</p>
+
+    <div id="power-of-Q" class="math-expr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+
+        <msup><mi>Q</mi><mi>n</mi></msup>
+        <mo>=</mo>
+
+        <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mi>&phi;</mi></mtd>
+                        <mtd><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+        <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><msup><mi>&phi;</mi><mi>n</mi></msup></mtd>
+                        <mtd><mi>0</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><msup><mi>&psi;</mi><mi>n</mi></msup></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+        <mfrac><mn>1</mn><msqrt><mn>5</mn></msqrt></mfrac>
+
+         <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mo>&#x2212;</mo><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mo>&#x2212;</mo><mn>1</mn></mtd>
+                        <mtd><mi>&phi;</mi></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+        <mo>=</mo>
+
+        <mfrac><mn>1</mn><msqrt><mn>5</mn></msqrt></mfrac>
+
+        <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><msup><mi>&phi;</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mtd>
+                        <mtd><msup><mi>&psi;</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><msup><mi>&phi;</mi><mrow><mi>n</mi></mrow></msup></mtd>
+                        <mtd><msup><mi>&psi;</mi><mrow><mi>n</mi></mrow></msup></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+
+         <mo>[</mo>
+                <mtable> <!-- Fibonacci Q-Matrix -->
+
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mo>&#x2212;</mo><mi>&psi;</mi></mtd>
+                    </mtr>
+
+                    <mtr>
+                        <mtd><mo>&#x2212;</mo><mn>1</mn></mtd>
+                        <mtd><mi>&phi;</mi></mtd>
+                    </mtr>
+
+                </mtable>
+        <mo>]</mo>
+    </math>
+    </div>
+
+    <p>Looking at the bottom left entry of this matrix, we arrive at:</p>
+
+    <div id="binet-formula-1" class="math-expr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+        <msub><mi>F</mi><mi>n</mi></msub>
+        <mo>=</mo>
+
+        <mfrac>
+            <mrow>
+            <msup><mi>&phi;</mi><mrow><mi>n</mi></mrow></msup>
+            <mo>&#x2212;</mo>
+            <msup><mi>&psi;</mi><mrow><mi>n</mi></mrow></msup>
+            </mrow>
+            <msqrt><mn>5</mn></msqrt>
+
+        </mfrac>
+    </math>
+    </div>
+
+    <p>This is known as Binet's formula for the Fibonacci sequence. We can simplify this formula, though. Since 
+
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+        <mrow>
+        <mo>|</mo>
+        <mi>&psi;</mi>
+        <mo>|</mo>
+        </mrow>
+        <mo>&lt;</mo>
+        <mn>1</mn>
+        </math>
+
+        , the <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mi>&psi;</mi><mi>n</mi></msup></math> term will become extremely small. So, we can rewrite the expression as:
+    </p>
+
+    <div id="binet-formula-2" class="math-expr">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+
+        <msub><mi>F</mi><mi>n</mi></msub>
+        <mo>=</mo>
+
+        <mrow>
+        <mo>{</mo>
+        <mfrac>
+            <msup><mi>&phi;</mi><mi>n</mi></msup>
+            <msqrt><mn>5</mn></msqrt>
+        </mfrac>
+        <mo>}</mo>
+        </mrow>
+
+    </math>
+    </div>
+
+    <p>where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo>{</mo><mi>&sdot;</mi><mo>}</mo></math> is the round function.</p>
+
+    <img src="desmos-graph.png">
+
+    <p>This image shows us that the exponential function 
+
+
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mfrac>
+            <msup><mi>&phi;</mi><mi>n</mi></msup>
+            <msqrt><mn>5</mn></msqrt>
+        </mfrac></math>
+
+        is a very close approximation for the Fibonacci sequence. This also explains why the ratio between two consecutive terms of the Fibonacci sequence approaches the golden ratio!
+    </p>
+
+    </body>
+</html>
