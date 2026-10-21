@@ -2,18 +2,20 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="F-sub-n.png">
         <title>Binet's Formula</title>
     </head>
     <body>
         <h1>Binet's Formula</h1>
         <a href="index.html">Go Back</a>
 
-    <p>How do we go about finding a general formula for the Fibonacci Sequence? We have the Fibonacci-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> matrix, 
+    <p><b>How do we go about finding a general formula for the Fibonacci Sequence?</b> We have the Fibonacci-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> matrix, 
     and we know that exponentiating it yields Fibonacci Numbers. If we can find a general formula for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mi>Q</mi><mi>n</mi></msup></math>, we then have a general formula for the Fibonacci Numbers.</p>
         
     <p>Linear algebra gives us the tools to do this through diagonalization. We obtain the two eigenvalues of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>Q</mi></math> are:</p>
 
-    <div id="phi-and-psi" class="math-expr">
+    <div id="phi-and-psi" class="math-box">
+        <div class="math-expr">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
         
         <mi>&phi;</mi>
@@ -38,10 +40,12 @@
         </mfrac>
     </math>
     </div>
+    </div>
 
     <p>We then get:</p>
 
-    <div id="diagonalization" class="math-expr">
+    <div id="diagonalization" class="math-box">
+        <div class="math-expr">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
 
         <mi>Q</mi>
@@ -97,11 +101,13 @@
                 </mtable>
         <mo>]</mo>
     </math>
+        </div>
     </div>
 
     <p>Then:</p>
 
-    <div id="power-of-Q" class="math-expr">
+    <div id="power-of-Q" class="math-box">
+        <div class="math-expr">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
 
 
@@ -195,10 +201,12 @@
         <mo>]</mo>
     </math>
     </div>
+    </div>
 
     <p>Looking at the bottom left entry of this matrix, we arrive at:</p>
 
-    <div id="binet-formula-1" class="math-expr">
+    <div id="binet-formula-1" class="math-box">
+    <div class="math-expr">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
 
         <msub><mi>F</mi><mi>n</mi></msub>
@@ -214,6 +222,7 @@
 
         </mfrac>
     </math>
+    </div>
     </div>
 
     <p>This is known as Binet's formula for the Fibonacci sequence. We can simplify this formula, though. Since 
@@ -231,7 +240,8 @@
         , the <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mi>&psi;</mi><mi>n</mi></msup></math> term will become extremely small. So, we can rewrite the expression as:
     </p>
 
-    <div id="binet-formula-2" class="math-expr">
+    <div id="binet-formula-2" class="math-box">
+        <div class="math-expr">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
 
         <msub><mi>F</mi><mi>n</mi></msub>
@@ -247,11 +257,17 @@
         </mrow>
 
     </math>
+        </div>
     </div>
 
     <p>where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo>{</mo><mi>&sdot;</mi><mo>}</mo></math> is the round function.</p>
 
-    <img src="desmos-graph.png">
+    <div class="interactive-graph">
+        <iframe 
+        src="https://www.desmos.com/calculator/onznyfxzfd?embed"
+        height="400">
+        </iframe>
+    </div>
 
     <p>This image shows us that the exponential function 
 
@@ -263,6 +279,129 @@
 
         is a very close approximation for the Fibonacci sequence. This also explains why the ratio between two consecutive terms of the Fibonacci sequence approaches the golden ratio!
     </p>
+
+    <p><b>Exercises</b></p>
+
+    <p>1.</p>
+
+        <div id="exercise-2-1" class="exercise">
+
+            Prove that
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                <munder>
+                    <mo movablelimit="true">lim</mo>
+
+                    <mrow>
+                    <mi>n</mi>
+                    <mo>&#8594;</mo>
+                    <mi>&infin;</mi>
+                    </mrow>
+
+                </munder>
+
+                <mfrac>
+                    <msub>
+                <mi>F</mi>
+                <mrow>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                </mrow>
+            </msub>
+            <msub>
+                <mi>F</mi>
+                <mi>n</mi>
+            </msub>
+                </mfrac>
+
+                <mo>=</mo>
+                <mi>&phi;</mi>
+
+            </math>
+
+            formally using Binet's formula.
+
+        </div>
+
+        <p>2.</p>
+
+        <div id="exercise-2-2" class="exercise">
+            Find <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>F</mi><mn>40</mn></msub></math>
+            using a calculator.
+        </div>
+
+        <p>3.</p>
+
+        <div id="exercise-2-3" class="exercise">
+            Continuing the Fibonacci sequence to the real numbers, find <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>F</mi><mn>0.5</mn></msub></math>.
+        </div>
+
+        <p>4.</p>
+
+        <div id="exercise-2-4" class="exercise">
+            Does Binet's formula hold for the negafibonacci numbers? If not, find a closed form formula for them.
+        </div>
+
+        <p>5.</p>
+
+        <div id="exercise-2-5" class="exercise">
+            Find a formula for the base-ten logarithm of the Fibonacci sequence. How many digits are in <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>F</mi><mn>100,000</mn></msub></math>?
+        </div>
+
+        <p>6.</p>
+
+        <div id="exercise-2-6" class="exercise">
+            Extend Binet's formula to any Fibonacci-like sequence whose initial conditions are <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+
+            <msub>
+                <mi>F</mi>
+                <mn>0</mn>
+            </msub>
+
+            <mo>=</mo>
+            <mi>a</mi>
+            <mo>,</mo>
+
+            <msub>
+                <mi>F</mi>
+                <mn>1</mn>
+            </msub>
+
+            <mo>=</mo>
+            <mi>b</mi>
+            
+        </math>.
+
+        </div>
+
+        <p>7.</p>
+
+        <div id="exercise-2-7" class="exercise">
+            Prove that the generating function for the Fibonacci sequence is 
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+
+            <mi>f</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfrac>
+                <mi>x</mi>
+                <mrow>
+                    <mn>1</mn>
+                    <mo>&#x2212;</mo>
+                    <mi>x</mi>
+                    <mo>&#x2212;</mo>
+                    <msup><mi>x</mi><mn>2</mn></msup>
+                </mrow>
+            </mfrac>
+        </math>, and prove Binet's formula another way by performing partial fraction decomposition on this function.
+
+        </div>
+
+
+
+
 
     </body>
 </html>
